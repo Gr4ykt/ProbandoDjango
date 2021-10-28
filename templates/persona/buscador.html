@@ -1,0 +1,14 @@
+<marquee><h1 style="color: brown;">Buscador de empleados</h1></marquee>
+
+<form method="GET">{% csrf_token %}
+    <input type="text" id="kword" name="kword" placeholder="Ingrese departamento aqui">
+    <button type="submit">Buscar</button>
+</form>
+
+<h3>Resultado de busqueda</h3>
+
+    <ul>
+         {% for e in empleados %}
+            <li>{{e}}</li>
+         {% endfor %}
+    </ul>
